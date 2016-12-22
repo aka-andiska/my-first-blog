@@ -7,7 +7,6 @@ from django.views import generic
 from .models import Choice, Question
 
 
-
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
@@ -25,14 +24,11 @@ class DetailView(generic.DetailView):
 class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
-
-
 def vote(request, question_id):
 
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    def index(request):
+        return HttpResponse("Hello, world. You're at the polls index.")
 
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
