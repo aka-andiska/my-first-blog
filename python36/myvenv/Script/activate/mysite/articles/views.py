@@ -39,3 +39,9 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'articles/post_detail.html', {'post': post})
 
+<<<<<<< HEAD:python36/myvenv/Script/activate/mysite/articles/views.py
+=======
+def post_list(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'articles/post_list.html', {})
+>>>>>>> 0c17fce1115046963187aa47ae9f49edcb7bcdd2:python36/myvenv/Script/activate/mysite/articles/views.py
